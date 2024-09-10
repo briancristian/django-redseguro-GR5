@@ -6,6 +6,9 @@ class Usuario(models.Model):
     nombre = models.CharField(null=False, max_length=50)
     apellido = models.CharField(null=False, max_length=50)
     mail = models.EmailField(null=False, unique=True)
+    contrasenia = models.CharField(null=False, max_length=10, default="12345")
+
     
     def __str__(self):
         return f'{self.nombre} {self.apellido}'
+    
