@@ -15,10 +15,15 @@
     {% compress css %}
     <link rel="stylesheet"
         href="{% static 'src/css/output.css' %}">
+        {% block css %}
+        {% endblock css %}
     {% endcompress %}
 
     {% compress js %}
     <script src="{% static 'src/js/navbar.js' %}"></script>
+    <script type="module" src="{% static 'src/js/HttpClient.js' %}"></script>
+        {% block javascript %}
+        {% endblock javascript %}
     {% endcompress %}
 </head>
  
