@@ -20,11 +20,13 @@ class HttpClient {
         try {
             const response = await fetch(`${this.baseURL}${endpoint}`, config);
             if (!response.ok) {
-                throw new Error(`Error: ${response.status}`);
+                const { message } = await response.json()
+                throw new Error(message);
             }
+
             return await response.json();
         } catch (error) {
-            console.error('HTTP Request Error:', error);
+            showAlert('error', error.message);
             throw error;
         }
     }
