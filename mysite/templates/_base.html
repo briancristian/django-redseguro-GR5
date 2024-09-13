@@ -21,6 +21,7 @@
 
     {% compress js %}
     <script src="{% static 'src/js/navbar.js' %}"></script>
+    <script src="{% static 'src/js/alert.js' %}"></script>
     <script type="module" src="{% static 'src/js/HttpClient.js' %}"></script>
         {% block javascript %}
         {% endblock javascript %}
@@ -29,6 +30,7 @@
  
 
 <body class="bg-gray-50">
+    {% include "components/alert.html" %}
     <header class="fixed top-0 w-full ">
         {% include "components/navbar.html" %}
     </header>
